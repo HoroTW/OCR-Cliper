@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#  if .venv does not exist create it
+if [ ! -d "./.venv" ]; then
+    echo "Creating virtual environment..."
+    python3 -m venv .venv
+fi
+
+# Activate the virtual environment
+source ./.venv/bin/activate && echo "Virtual environment activated."
+
+# insall deps
+bash -c "pip install -r requirements.txt"
+
+# exit
+exit 0
