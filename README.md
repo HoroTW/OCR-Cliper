@@ -3,6 +3,10 @@
 This is just a very simple script that takes a image or the path to an image from the clipboard and 
 runs it through EasyOCR and then puts the output back into the clipboard.
 
+## Requirements
+- Xclip
+- Python 3 (with venv module)
+
 ## Installation
 Just execute the `install` script - it creates a virtual environment and installs the requirements.
 
