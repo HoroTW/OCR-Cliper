@@ -26,13 +26,9 @@ def get_from_xclip(primary: bool = False, image: bool = False):
 def copy_to_xclip(text: str, primary: bool = False):
     selection = "p" if primary else "c"
     p = subprocess.Popen(
-        ["xclip", "-selection", selection],
-        stdin=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        close_fds=True,
+        f"xclip -selection {selection}", stdin=subprocess.PIPE, shell=True
     )
-    p.communicate(input=text.encode("utf-8"))
+    p.communicate(text.encode())
 
 
 def notify(title: str, message: str):
